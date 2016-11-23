@@ -3,7 +3,24 @@
   "version": "1.0.0",
   "description": "Helper library for handling websocket with authorization header in Angular 2 apps",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tsc": "tsc",
+    "typings": "typings",
+    "uglifyjs": "uglifyjs",
+    "tslint": "tslint *.ts src/**/*.ts",
+    "lint": "npm run tslint",
+    "minify": "uglifyjs -o bundles/secure-websocket.min.js bundles/secure-websocket.js",
+    "prepublish": "npm run build",
+    "clean": "rimraf *.js *.js.map *.d.ts app/**/*.js app/**/*.js.map app/**/*.d.ts dist bundles",
+    "precompile": "typings install",
+    "compile": "npm run compile:bundle && npm run compile:cjs && npm run compile:es6",
+    "compile:bundle": "tsc",
+    "compile:cjs": "tsc -t ES5 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node --declaration index.ts typings/index",
+    "compile:es6": "tsc -t ES6 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node index.ts --outDir dist/es6",
+    "pretest": "npm run lint",
+    "test": "echo tests pending...",
+    "prebuild": "npm run clean && npm run compile && npm run test",
+    "build": "npm run minify",
+    "postbuild": "echo Build Successful."
   },
   "repository": {
     "type": "git",
