@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "rootDir": "../",
+    "module": "system",
+    "sourceMap": true,
+    "target": "es5",
+    "outFile": "bundles/secure-websocket.js",
+    "moduleResolution": "node",
+    "removeComments": true
+  },
+  "files": [
+    "index",
+    "typings/index"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings/globals"
+  ]
+}
