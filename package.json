@@ -1,0 +1,19 @@
+{
+  "name": "secure-websoccket",
+  "version": "1.0.0",
+  "description": "Helper library for handling websocket with authorization header in Angular 2 apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carluccyo/secure-websoccket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carluccyo/secure-websoccket/issues"
+  },
+  "homepage": "https://github.com/carluccyo/secure-websoccket#readme"
+}
