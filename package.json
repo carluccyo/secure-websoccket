@@ -1,5 +1,5 @@
 {
-  "name": "secure-websoccket",
+  "name": "secure-websocket",
   "version": "1.0.0",
   "description": "Helper library for handling websocket with authorization header in Angular 2 apps",
   "main": "bundles/secure-websocket.min.js",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carluccyo/secure-websoccket.git"
+    "url": "git+https://github.com/carluccyo/secure-websocket.git"
   },
   "keywords": [
     "angular2",
@@ -35,9 +35,9 @@
   "author": "Carlo Di Maio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/carluccyo/secure-websoccket/issues"
+    "url": "https://github.com/carluccyo/secure-websocket/issues"
   },
-  "homepage": "https://github.com/carluccyo/secure-websoccket#readme",
+  "homepage": "https://github.com/carluccyo/secure-websocket#readme",
   "dependencies": {
     "@angular/common": "~2.0.1",
     "@angular/compiler": "~2.0.1",
