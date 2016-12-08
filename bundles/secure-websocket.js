@@ -11,7 +11,7 @@ System.register("secure-websoccket/app/secure-websocket", ['@angular/core'], fun
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var core_1;
-    var Status, WebsocketService;
+    var Status, WebSocketSendMode, WebsocketService;
     return {
         setters:[
             function (core_1_1) {
@@ -26,12 +26,28 @@ System.register("secure-websoccket/app/secure-websocket", ['@angular/core'], fun
                 Status[Status["RECONNECT_ABORTED"] = 4] = "RECONNECT_ABORTED";
             })(Status || (Status = {}));
             exports_1("Status", Status);
+            (function (WebSocketSendMode) {
+                WebSocketSendMode[WebSocketSendMode["Direct"] = 0] = "Direct";
+                WebSocketSendMode[WebSocketSendMode["Promise"] = 1] = "Promise";
+                WebSocketSendMode[WebSocketSendMode["Observable"] = 2] = "Observable";
+            })(WebSocketSendMode || (WebSocketSendMode = {}));
+            exports_1("WebSocketSendMode", WebSocketSendMode);
             WebsocketService = (function () {
-                function WebsocketService() {
+                function WebsocketService(url, protocols, config, binaryType) {
+                    this.url = url;
+                    this.protocols = protocols;
+                    this.config = config;
+                    this.binaryType = binaryType;
+                    var match = new RegExp('wss?:\/\/').test(url);
+                    if (!match) {
+                        throw new Error('Invalid url provided');
+                    }
+                    this.config = config || { initialTimeout: 500, maxTimeout: 300000, reconnectIfNotNormalClose: false };
+                    this.binaryType = binaryType || "blob";
                 }
                 WebsocketService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [String, Array, Object, String])
                 ], WebsocketService);
                 return WebsocketService;
             }());

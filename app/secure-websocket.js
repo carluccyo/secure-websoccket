@@ -17,12 +17,30 @@ var core_1 = require('@angular/core');
     Status[Status["RECONNECT_ABORTED"] = 4] = "RECONNECT_ABORTED";
 })(exports.Status || (exports.Status = {}));
 var Status = exports.Status;
+(function (WebSocketSendMode) {
+    WebSocketSendMode[WebSocketSendMode["Direct"] = 0] = "Direct";
+    WebSocketSendMode[WebSocketSendMode["Promise"] = 1] = "Promise";
+    WebSocketSendMode[WebSocketSendMode["Observable"] = 2] = "Observable";
+})(exports.WebSocketSendMode || (exports.WebSocketSendMode = {}));
+var WebSocketSendMode = exports.WebSocketSendMode;
 var WebsocketService = (function () {
-    function WebsocketService() {
+    function WebsocketService(url, protocols, config, binaryType) {
+        this.url = url;
+        this.protocols = protocols;
+        this.config = config;
+        this.binaryType = binaryType;
+        var match = new RegExp('wss?:\/\/').test(url);
+        if (!match) {
+            throw new Error('Invalid url provided');
+        }
+        this.config = config || { initialTimeout: 500, maxTimeout: 300000, reconnectIfNotNormalClose: false };
+        this.binaryType = binaryType || "blob";
+        // this.dataStream = new Subject();
+        // this.connect(true);
     }
     WebsocketService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [String, Array, Object, String])
     ], WebsocketService);
     return WebsocketService;
 }());
