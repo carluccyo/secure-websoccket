@@ -1,1 +1,1 @@
-{"version":3,"file":"secure-websocket.js","sourceRoot":"","sources":["../index.ts"],"names":[],"mappings":""}
+{"version":3,"file":"secure-websocket.js","sourceRoot":"","sources":["../app/secure-websocket.ts","../index.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;YAIA,WAAY,MAAM;gBAChB,+CAAU,CAAA;gBACV,mCAAI,CAAA;gBACJ,yCAAO,CAAA;gBACP,uCAAM,CAAA;gBACN,6DAAiB,CAAA;YACnB,CAAC,EANW,MAAM,KAAN,MAAM,QAMjB;wCAAA;YAKD;gBAGI;gBAAgB,CAAC;gBAJrB;oBAAC,iBAAU,EAAE;;oCAAA;gBAMb,uBAAC;YAAD,CAAC,AALD,IAKC;YALD,+CAKC,CAAA"}
